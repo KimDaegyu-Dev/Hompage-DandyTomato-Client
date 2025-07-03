@@ -36,7 +36,7 @@
         "testDir": "C:/Users/eorbr/OneDrive/문서/GitHub/Likelion-Hompage-DandyTomato-Client/src/e2e_tests",
         "testIgnore": [],
         "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          // "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
         "timeout": 30000
       }

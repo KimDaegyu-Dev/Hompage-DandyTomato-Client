@@ -18,11 +18,10 @@ export default function GlobalNavigationButton() {
     const [isAdminMoenuOpen, setIsAdminMoenuOpen] = useState(false)
     const navigate = useNavigate()
     const { mutate: logout, isPending: isLoggingOut } = useLogout()
-    const { accessToken, logout: clearAuth } = useAuthZustandStore()
+    const { accessToken, logout: clearAuth, login, isLogin } = useAuthZustandStore()
     const { data: loginUrlData, isLoading: isLoadingLoginUrl } =
         useGoogleLoginUrl()
 
-    const isLogin = !!accessToken
     return (
         <div className="fixed top-64 z-50 flex w-screen justify-between px-64">
             <NavigationMenu className="">
@@ -97,17 +96,17 @@ export default function GlobalNavigationButton() {
                 )}
             </NavigationMenu>
 
-            {isLogin ? (
+            {isLogin() ? (
                 <NavigationMenu className="">
                     <NavigationMenuList className="text-20 text-sub-seoultech-blue rounded-50 flex cursor-pointer items-center justify-center gap-4 border-2 border-[oklch(36%_0.083495_245.3/0.2)] bg-[oklch(92.2%_0.005498_275/0.5)] px-6 py-6 font-bold">
                         <NavigationMenuList
                             className="hover:bg-sub-seoultech-blue hover:text-pri-white rounded-50 flex flex-row items-center gap-64 px-30 py-10 transition-all duration-300"
-                            // onMouseOver={() => {
-                            //     setIsSessionHover(true)
-                            // }}
-                            // onMouseOut={() => {
-                            //     setIsSessionHover(false)
-                            // }}
+                        // onMouseOver={() => {
+                        //     setIsSessionHover(true)
+                        // }}
+                        // onMouseOut={() => {
+                        //     setIsSessionHover(false)
+                        // }}
                         >
                             <NavigationMenuItem className="hover:bg-sub-seoultech-blue hover:text-pri-white rounded-50">
                                 <Link to="/session">SESSION</Link>
@@ -193,6 +192,7 @@ export default function GlobalNavigationButton() {
                         <NavigationMenuItem className="hover:bg-sub-seoultech-blue hover:text-pri-white rounded-50 px-30 py-10">
                             <button
                                 onClick={() => {
+                                    login()
                                     if (loginUrlData?.data) {
                                         window.location.href = loginUrlData.data
                                     }
