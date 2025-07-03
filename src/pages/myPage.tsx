@@ -7,11 +7,11 @@ import SharedButton from '@/components/SharedButton'
 import useVerticalScroll from '@/hooks/useVerticalScroll'
 import { RefObject, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import DefaultImage from '@/assets/images/MemberCardDefault.png'
 export default function MyPage() {
     const { image, name, major, email, description, links, generation, part } =
     {
-        image: '/src/assets/testpng.png',
+        image: DefaultImage,
         name: '김철수',
         major: '도예학과',
         email: 'bogus_j@naver.com',
