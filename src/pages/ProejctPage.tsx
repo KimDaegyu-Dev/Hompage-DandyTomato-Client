@@ -7,7 +7,7 @@ import ProjectGrid from '@/components/archive/ProjectGrid'
 import { useNavigate } from 'react-router-dom'
 
 export default function ProjectPage() {
-    const projectItems = Array.from({ length: 10 }, (_, i) => ({
+    const projectItems = Array.from({ length: 50 }, (_, i) => ({
         id: i + 1,
         title: `프로젝트 ${i + 1}`,
         description: `프로젝트 ${i + 1}에 대한 설명입니다.`,

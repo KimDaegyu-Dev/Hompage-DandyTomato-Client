@@ -5,7 +5,7 @@ import { useRef, useState } from 'react'
 import GalleryGrid from '@/components/archive/GalleryGrid'
 
 const ArchivePage = () => {
-    const [galleryItems, setGalleryItems] = useState<any[]>(Array.from({ length: 10 }, (_, i) => ({
+    const [galleryItems, setGalleryItems] = useState<any[]>(Array.from({ length: 50 }, (_, i) => ({
         id: i + 1,
         title: `갤러리 ${i + 1}`,
         description: `갤러리 ${i + 1}에 대한 설명입니다.`,

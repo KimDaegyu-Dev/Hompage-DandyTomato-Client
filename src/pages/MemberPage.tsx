@@ -4,6 +4,7 @@ import MemberCard from '@/components/member/MemberCard'
 import MemberItem from '@/components/member/MemberItem'
 import useHorizontalScroll from '@/hooks/useHorizontalScroll'
 import { RefObject, useRef, useState } from 'react'
+import DefaultImage from '@/assets/images/MemberCardDefault.png'
 import gsap from 'gsap'
 export default function MemberPage() {
     const containerRef = useRef<HTMLDivElement>(null)
@@ -79,7 +80,7 @@ export default function MemberPage() {
     }
     const members = Array.from({ length: 30 }).map((_, index) => ({
         name: `김철수${index}`,
-        image: '/src/assets/testpng.png',
+        image: DefaultImage,
         part: '프론트엔드',
         generation: '1기'
     }))
